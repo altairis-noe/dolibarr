@@ -328,7 +328,16 @@ class FormSetup
 
 			$out .= '<td class="col-setup-title">';
 			$out .= '<span id="helplink'.$item->confKey.'" class="spanforparamtooltip">';
+			if (empty($item->fieldOverride)) {
+				if ($item->getType() == '') {
+					$labelprefix = "setup-";
+				}
+				$out .= '<label for="'.$labelprefix.$item->confKey.'">';
+			}
 			$out .= $this->form->textwithpicto($item->getNameText(), $item->getHelpText(), 1, 'info', '', 0, 3, 'tootips'.$item->confKey);
+			if (empty($item->fieldOverride)) {
+				$out .= '</label>';
+			}
 			$out .= '</span>';
 			$out .= '</td>';
 

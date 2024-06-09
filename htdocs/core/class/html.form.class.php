@@ -2740,7 +2740,7 @@ class Form
 			}
 
 			if (empty($hidelabel)) {
-				$out .= $langs->trans("RefOrLabel") . ' : ';
+				$out .= '<label for="search_' . $htmlname . '">'.$langs->trans("RefOrLabel") . ' : </label>';
 			} elseif ($hidelabel > 1) {
 				$placeholder = ' placeholder="' . $langs->trans("RefOrLabel") . '"';
 				if ($hidelabel == 2) {
